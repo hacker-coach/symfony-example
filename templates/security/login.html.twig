@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body_id 'login' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+
+
+    <div class="container">
+    {% if error %}
+        <div class="alert alert-danger">
+            ERROR
+        </div>
+    {% endif %}
+
+
+
+        <form class="form-signin" action="{{ path('security_login') }}" method="post">
+            <label for="username" class="sr-only">Username</label>
+            <input  autocomplete="off"  type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="Username" required autofocus>
+            <label for="password" class="sr-only">Password</label>
+            <input autocomplete="off" type="password" id="password" name="_password" class="form-control" placeholder="Password" required />
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+            <button type="submit" class="btn btn-lg btn-primary btn-block">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> Sign in
+            </button>
+
+        </form>
+
+    </div>
+
+
+{% endblock %}
+

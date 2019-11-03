@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body_id 'login' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block header %}
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">accounting</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('private_billin') }}">IN <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link"href="{{ path('private_billout') }}">OUT</a>
+                    </li>
+                </ul>
+                <div class="form-inline mt-2 mt-md-0">
+                    <a class="btn btn-outline-success my-2 my-sm-0"  href="{{ path('security_logout') }}">Logout </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+{% block main %}
+
+
+<div class="container">
+
+    <h1 style="padding-top: 70px;">Billin - Show</h1>
+    <div class="row">
+
+        <div class="col-md-12">
+            {{ bill.uid }} <br>
+            {{ bill.rNr }} <br>
+            {{ bill.hinweis }} <br>
+            {{ bill.billArticleDescription }} <br>
+            {{ bill.billPrice|number_format(2, '.', ',') }} <br>
+            {{ bill.billDate|date("d/m/Y") }} <br>
+            {{ bill.billProvidedDateMm|date("d/m/Y") }} <br>
+            {{ bill.customerFirstname }} <br>
+            {{ bill.customerLastname }} <br>
+            {{ bill.customerEmail }} <br>
+            {{ bill.customerAddress }} <br>
+            {{ bill.customerCountry }} <br>
+            {{ bill.customerCity }} <br>
+            {{ bill.customerCompany }} <br>
+            {{ bill.customerPhone }} <br>
+            {{ bill.customerZip }} <br>
+            {{ token }}
+
+
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
+

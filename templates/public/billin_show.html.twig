@@ -1,0 +1,132 @@
+{% extends 'invoice.html.twig' %}
+
+
+{% block body_id 'login' %}
+
+
+
+
+{% block main %}
+
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title" width="60%">
+                                <img src="http://www.wallpage.net/en/core/responsefile/theme-b3-x-logo.png" style="width:100px; height:100px;">
+                            </td>
+
+                            <td width="30%">
+                                Rechnung Nr.: {{ bill.uid }}<br>
+                                Datum: {{ bill.billDate|date("d/m/Y") }}<br>
+                                Erbracht: {{ bill.billProvidedDateMm|date("d/m/Y") }}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td width="60%">
+                                An<br>
+                                <strong>{{ bill.customerCompany }} </strong><br>
+                                {{ bill.customerFirstname }} {{ bill.customerLastname }}<br>
+                                {{ bill.customerAddress }} <br>
+                                {{ bill.customerZip }} {{ bill.customerCity }}
+                            </td>
+
+                            <td width="30%">
+                                Von<br>
+                               <strong>wallpage.net</strong> <br>
+                                Micha Barthel<br>
+                                Bernhard-Winter-Str.5<br>
+                                27777 Ganderkesee<br>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr class="heading">
+                <td width="80%">
+                    Umsatzsteuer Art
+                </td>
+
+                <td width="20%">
+                    USt-IdNr.
+                </td>
+            </tr>
+
+            <tr class="details">
+                <td width="80%">
+                    Nach Paragraph 19 UStG bin ich als Kleinunternehmer von der Umsatzsteuer befreit.
+                </td>
+
+                <td width="20%">
+                    34/217/59369
+                </td>
+            </tr>
+
+
+        </table>
+
+        <table cellpadding="0" cellspacing="0">
+
+
+            <tr class="heading">
+                <td width="55%">
+                    Produkt/ Leistungsbeschreibung
+                </td>
+
+                <td width="20%">
+                    Netto
+                </td>
+                <td width="20%">
+                    Brutto
+                </td>
+                <td width="5%">
+                    Mwst.
+                </td>
+            </tr>
+
+            <tr class="item">
+                <td>
+                    {{ bill.billArticleDescription }}
+                </td>
+
+                <td>
+                    {{ bill.billPrice|number_format(2, '.', ',') }} €
+                </td>
+                <td>
+                    {{ bill.billPrice|number_format(2, '.', ',') }} €
+                </td>
+                <td>
+                    0 %
+                </td>
+            </tr>
+
+
+
+        </table>
+
+        <table cellpadding="0" cellspacing="0">
+
+
+
+            <tr class="heading">
+                <td width="50%"></td>
+                <td width="30%">Gesamtbetrag Brutto: </td>
+                <td width="20%">
+                    {{ bill.billPrice|number_format(2, '.', ',') }} EUR
+                </td>
+            </tr>
+        </table>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,27 @@
+Options -Indexes
+<IfModule mod_rewrite.c>
+        RewriteEngine On
+
+        RewriteRule ^(.*)[a-z]/cache/(.*) cache/$2
+        RewriteRule ^(.*)[a-z]/package/(.*) package/$2
+        RewriteRule ^(.*)[a-z]/page/(.*) page/$2
+        RewriteRule ^(.*)[a-z]/data/(.*) data/$2
+
+        RewriteRule ^cache/(.*)\.(txt|html|php)$ index.php [L]
+        RewriteRule ^package/(.*)\.(txt|html|php)$ index.php [L]
+        RewriteRule ^page/(.*)\.(txt|html|php)$ index.php [L]
+        RewriteRule ^data/(.*)\.(txt|html|php)$ index.php [L]
+        RewriteRule ^vendor/(.*)\.(php)$ index.php [L]
+
+        RewriteCond %{REQUEST_FILENAME} -s [OR]
+        RewriteCond %{REQUEST_FILENAME} -l [OR]
+        RewriteCond %{REQUEST_FILENAME} -d
+
+        RewriteRule ^.*$ - [NC,L]
+
+        RewriteRule ^.*$ index.php [NC,L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+        ErrorDocument 404 "SERVER-SETTING: no mod_rewrite found"
+</IfModule>

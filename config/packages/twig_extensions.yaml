@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        public: false
+        autowire: true
+        autoconfigure: true
+
+    #Twig\Extensions\ArrayExtension: ~
+    #Twig\Extensions\DateExtension: ~
+    #Twig\Extensions\IntlExtension: ~
+    #Twig\Extensions\TextExtension: ~
+
+    # needed for the 'localizeddate' Twig filter
+    Twig\Extensions\IntlExtension: ~
