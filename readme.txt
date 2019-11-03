@@ -2,7 +2,8 @@ DEV:
 
 * composer create-project symfony/skeleton accounting
 
-* cd accounting -> git remote add origin https://github.com/wallpageNET/accounting.git
+* cd accounting -> git remote add origin https://github.com/BUNTVOGEL/symfony-accounting.git
+
    git push -u origin master
 
 * cd accounting -> composer require server
