@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "35c56af7e484caf551e4a22ea8e6e3fc",
@@ -1021,12 +1021,12 @@
             "version": "v2.6.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/doctrine2.git",
+                "url": "https://github.com/doctrine/orm.git",
                 "reference": "374e7ace49d864dad8cddbc55346447c8a6a2083"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/374e7ace49d864dad8cddbc55346447c8a6a2083",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/374e7ace49d864dad8cddbc55346447c8a6a2083",
                 "reference": "374e7ace49d864dad8cddbc55346447c8a6a2083",
                 "shasum": ""
             },
@@ -3108,12 +3108,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/lts.git",
-                "reference": "396c5fca8d73d01186df37d7031321a3c0c2bf92"
+                "reference": "c1affae45b78aee036effa1759237e7fa96d4af2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/lts/zipball/396c5fca8d73d01186df37d7031321a3c0c2bf92",
-                "reference": "396c5fca8d73d01186df37d7031321a3c0c2bf92",
+                "url": "https://api.github.com/repos/symfony/lts/zipball/c1affae45b78aee036effa1759237e7fa96d4af2",
+                "reference": "c1affae45b78aee036effa1759237e7fa96d4af2",
                 "shasum": ""
             },
             "conflict": {
@@ -3142,6 +3142,7 @@
                 "symfony/intl": ">=5",
                 "symfony/ldap": ">=5",
                 "symfony/lock": ">=5",
+                "symfony/messenger": ">=5",
                 "symfony/monolog-bridge": ">=5",
                 "symfony/options-resolver": ">=5",
                 "symfony/process": ">=5",
@@ -3192,7 +3193,8 @@
             ],
             "description": "Enforces Long Term Supported versions of Symfony components",
             "homepage": "https://symfony.com",
-            "time": "2017-10-19T02:16:32+00:00"
+            "abandoned": "symfony/flex",
+            "time": "2018-10-03T12:03:19+00:00"
         },
         {
             "name": "symfony/monolog-bridge",
@@ -4540,6 +4542,7 @@
                 "code",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-code",
             "time": "2017-10-20T15:21:32+00:00"
         },
         {
@@ -4594,6 +4597,7 @@
                 "events",
                 "zf2"
             ],
+            "abandoned": "laminas/laminas-eventmanager",
             "time": "2017-07-11T19:17:22+00:00"
         }
     ],
@@ -4883,6 +4887,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause|MIT"
+            ],
             "authors": [
                 {
                     "name": "Kore Nordmann",
@@ -5250,16 +5257,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v4.0.3",
+            "version": "v4.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "b989c646eb422f3ad583f0be3b482a774668e86f"
+                "reference": "cc546f59d55f63010ff4d4f40a2af39526842524"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/b989c646eb422f3ad583f0be3b482a774668e86f",
-                "reference": "b989c646eb422f3ad583f0be3b482a774668e86f",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/cc546f59d55f63010ff4d4f40a2af39526842524",
+                "reference": "cc546f59d55f63010ff4d4f40a2af39526842524",
                 "shasum": ""
             },
             "require": {
@@ -5278,7 +5285,7 @@
             "type": "symfony-bridge",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 },
                 "thanks": {
                     "name": "phpunit/phpunit",
@@ -5312,7 +5319,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2018-01-04T17:20:09+00:00"
+            "time": "2019-04-16T09:37:00+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
